@@ -1,0 +1,54 @@
+body {
+    background-color: whitesmoke ;
+}
+
+h1 {
+    display: flex;
+    justify-content: center; /* Mueve el contenido del título hacia el centro */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    display: flex; /* Hace que los elementos dentro del div sean flexibles y se posicionen uno al lado del otro */
+}
+
+#botonAnadirTarea {
+    border: none;
+    background-color: #198754;
+    padding: 10px 20px; /* Ajuste del tamaño del botón */
+    font-size: 16px;
+    color: #F5F5F5;
+    margin-left: 0;
+}
+
+ul {
+    list-style-type: none; /* Elimina los puntos negros de la lista */
+    padding: 0; /* Mueve los elementos de la lista a la parte más izquierda de la pantalla */
+}
+
+li:first-child {
+    border-top: 0px; /* Hace que el primer elemento li no tenga borde superior (estética) */
+}
+
+li {
+    display: flex;
+    align-items: center; /* Alinea los elementos dentro del li en el centro */    
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    padding: 10px; /* Hace que los elementos de la lista tengan más "relleno", es decir, más espacio */
+    border-top: 1px solid #ccc;
+}
+
+
+button {
+    background-color: crimson;
+    border: none;
+    color: #F5F5F5;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-left: 15px; /* Añade un margen al botón para que no esté pegado al texto */
+}
+
+button:hover {
+    cursor: pointer; /* Hace que el cursor pase a ser un "pointer" cuando pasa por encima de un botón */
+}
