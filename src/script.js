@@ -4,6 +4,9 @@
         const botonAnadirTarea = document.querySelector(`[id='botonAnadirTarea']`);
         const texto = document.querySelector(`[id='texto']`);
 
+        // Busca el primer elemento 'h1'
+        const titulo = document.querySelector(`h1`);
+
         // Creo la lista donde se almacenarán todas las tareas.
         const lista = document.createElement("ul");
         lista.setAttribute("class", "list-group");
@@ -13,6 +16,15 @@
         let idCheckbox = 1;
 
         botonAnadirTarea.addEventListener("click", anadirTarea);
+
+        /* Añado eventos al título de forma que cuando se pase el puntero por encima
+        se subraye el texto. Cuando deje de estar por encima, desaparece el subrayado. */
+        titulo.addEventListener('mouseover', () => {
+            titulo.style.textDecoration = 'underline';
+        });
+        titulo.addEventListener('mouseout', () => {
+            titulo.style.textDecoration = '';
+        });
 
         /* Función que crea una tarea y sus elementos, luego les añade funcionalidad
         con llamadas de métodos auxiliares y finalmente los agrega a la lista. */
