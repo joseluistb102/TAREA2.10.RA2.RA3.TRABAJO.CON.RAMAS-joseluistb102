@@ -9,7 +9,6 @@
 
         // Creo la lista donde se almacenarán todas las tareas.
         const lista = document.createElement("ul");
-        lista.setAttribute("class", "list-group");
 
         /* Creo un id para los checkbox, el cual usaré para
         darle funcionalidad. */
@@ -30,15 +29,15 @@
         con llamadas de métodos auxiliares y finalmente los agrega a la lista. */
         function anadirTarea() {
             let tarea = document.createElement("li");
-            // Agrega el atributos clase (bootstrap).
-            tarea.setAttribute("class", "list-group-item");
 
             let checkboxTarea = document.createElement("input");
             let checkboxTareaLabel = document.createElement("label");
             let botonTarea = document.createElement("button");
 
+            // Establece el texto del botón como "Eliminar"
+            botonTarea.textContent = "Eliminar";
+
             agregarAtributosCheckbox(checkboxTarea, checkboxTareaLabel);
-            agregarAtributosBoton(botonTarea);
             tacharTarea(checkboxTarea, checkboxTareaLabel);
             eliminarTarea(botonTarea, tarea);
 
@@ -50,13 +49,6 @@
             tarea.appendChild(botonTarea);
             lista.appendChild(tarea);
             document.body.appendChild(lista);
-        }
-
-        // Función recibe un botón como parámetro y le agrega atributos Bootstrap.
-        function agregarAtributosBoton(boton) {
-            boton.setAttribute("class", "btn btn-danger btn-sm");
-            boton.setAttribute("style", "margin-left: 15px");
-            boton.textContent = "Eliminar";
         }
 
         // Función que recibe un botón y una tarea y elimina la tarea asociada al botón
@@ -72,7 +64,6 @@
         function agregarAtributosCheckbox(checkbox, checkboxLabel) {
             checkbox.setAttribute("type", "checkbox");
             checkbox.setAttribute("id", "checkboxTarea" + idCheckbox);
-            checkbox.setAttribute("class", "form-check-input me-1");
 
             checkboxLabel.setAttribute("for", "checkboxTarea" + idCheckbox);
             // El texto del label será el texto introducido en la entrada de texto.
